@@ -77,6 +77,18 @@ New features created:
 - Age
 
 ---
+## 📊 Visual Outputs
+
+Below are key visualizations generated in this project:
+
+- Glucose Distribution
+- Correlation Heatmap
+- Feature Importance
+- Outcome Distribution
+- BMI Distribution
+- Age Distribution
+
+All visuals are available in the `outputs/` folder.
 ## 📂 Project Structure
 
 ```text
