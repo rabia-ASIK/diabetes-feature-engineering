@@ -313,7 +313,6 @@ def plot_importance(model, features, num=20):
     plt.savefig(OUTPUTS_DIR / "feature_importance.png")
     plt.show()
 
-
 ###############################################################
 # TASK 1: EXPLORATORY DATA ANALYSIS
 ###############################################################
@@ -562,3 +561,52 @@ This script is organized to be:
 - reusable in GitHub portfolio projects
 - understandable for recruiters and interviewers
 """)
+import os
+
+# proje ana klasörünü bul
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# outputs yolu
+output_path = os.path.join(BASE_DIR, "outputs")
+
+# klasör yoksa oluştur
+os.makedirs(output_path, exist_ok=True)
+
+# kayıt yolu
+file_path = os.path.join(output_path, "glucose.png")
+
+# grafik
+df["Glucose"].hist()
+plt.title("Glucose Distribution")
+plt.savefig(file_path)
+plt.show()
+
+# =========================
+# EXTRA VISUALIZATIONS
+# =========================
+
+import os
+import matplotlib.pyplot as plt
+
+# proje ana klasöre kayıt için path
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+output_path = os.path.join(BASE_DIR, "outputs")
+os.makedirs(output_path, exist_ok=True)
+
+# Outcome Distribution
+df["Outcome"].value_counts().plot(kind="bar")
+plt.title("Outcome Distribution")
+plt.savefig(os.path.join(output_path, "outcome.png"))
+plt.show()
+
+# BMI Distribution
+df["BMI"].hist()
+plt.title("BMI Distribution")
+plt.savefig(os.path.join(output_path, "bmi.png"))
+plt.show()
+
+# Age Distribution
+df["Age"].hist()
+plt.title("Age Distribution")
+plt.savefig(os.path.join(output_path, "age.png"))
+plt.show()
